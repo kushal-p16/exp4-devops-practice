@@ -213,10 +213,10 @@ rebuild the image.
 
 ## Step 12: Tag the Image for Docker Hub
 
-Replace `YOUR_DOCKERHUB_USERNAME` with your actual Docker Hub username:
+Use the Docker Hub username shown in the practical notes:
 
 ``` bash
-docker tag tomcat-static-app:latest YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker tag tomcat-static-app:latest dradityacr/tomcat-static-app:1.0
 ```
 
 This adds a Docker Hub-compatible name and tag to the local image.
@@ -237,7 +237,7 @@ prompted.
 Run:
 
 ``` bash
-docker push YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker push dradityacr/tomcat-static-app:1.0
 ```
 
 This uploads the tagged image to the corresponding Docker Hub
@@ -255,7 +255,7 @@ docker login
 4.  Pull the image:
 
 ``` bash
-docker pull YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker pull rashmi2122/tomcat-static-app:1.0
 ```
 
 5.  Confirm that the image is available:
@@ -269,7 +269,7 @@ docker images
 Run:
 
 ``` bash
-docker run -d -p 8083:8080 --name tomcat-app4 YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker run -d -p 8083:8080 --name tomcat-app4 rashmi2122/tomcat-static-app:1.0
 ```
 
 Open the browser on the second computer and visit:
@@ -304,18 +304,18 @@ docker ps
 docker logs tomcat-app4
 docker stop tomcat-app4
 docker start tomcat-app4
-docker tag tomcat-static-app:latest YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker tag tomcat-static-app:latest dradityacr/tomcat-static-app:1.0
 docker login
-docker push YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker push dradityacr/tomcat-static-app:1.0
 ```
 
 On the second computer:
 
 ``` bash
 docker login
-docker pull YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker pull rashmi2122/tomcat-static-app:1.0
 docker images
-docker run -d -p 8083:8080 --name tomcat-app4 YOUR_DOCKERHUB_USERNAME/tomcat-static-app:1.0
+docker run -d -p 8083:8080 --name tomcat-app4 rashmi2122/tomcat-static-app:1.0
 ```
 
 ## Common Errors and Solutions
